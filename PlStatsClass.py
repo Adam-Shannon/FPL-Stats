@@ -17,7 +17,7 @@ class StatsGetter:
 
     def get_table(self,position,sortCriteria):
         #set filters according to user input
-        self.position_filter.select_by_value(position)
+        self.position_filter.select_by_visible_text(position)
         self.sorting_filter.select_by_value(sortCriteria)
 
         #use filters to construct array containing rows of the table
@@ -32,9 +32,9 @@ class StatsGetter:
         self.driver.quit()
 
 #usage demonstration
-""" 
+"""
 provider = StatsGetter()
-table = provider.get_table('et_2','goals_scored')
+table = provider.get_table('Defenders','goals_scored')
 provider.finish()
-print(table) 
+print(table)
 """
